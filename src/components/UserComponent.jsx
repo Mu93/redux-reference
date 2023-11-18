@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { setUser } from "../store/actions/UserActions";
 
 const UserComponent = ({ user, setUser }) => {
   return (
@@ -14,7 +15,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setUser: (user) => dispatch({ type: "SET_USER", payload: user }),
+  setUser: (user) => dispatch(setUser(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserComponent);

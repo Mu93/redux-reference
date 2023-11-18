@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { decrement, increment } from "../store/actions/CounterActions";
 
 const CounterComponent = ({ count, increment, decrement }) => {
   return (
@@ -15,8 +16,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  increment: () => dispatch({ type: "INCREMENT" }),
-  decrement: () => dispatch({ type: "DECREMENT" }),
+  increment: () => dispatch(increment()),
+  decrement: () => dispatch(decrement()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
